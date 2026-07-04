@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: light dark; }
+body { @apply bg-cream text-coffee-950 dark:bg-coffee-950 dark:text-cream font-sans; }
+.card { @apply bg-white dark:bg-coffee-900 rounded-2xl shadow-sm border border-coffee-100 dark:border-coffee-800 p-5; }
+.btn { @apply inline-flex items-center justify-center rounded-xl px-4 py-2.5 font-medium transition bg-coffee-700 text-white hover:bg-coffee-800 disabled:opacity-50; }
+.btn-secondary { @apply bg-cream text-coffee-900 border border-coffee-200 dark:bg-coffee-800 dark:text-cream dark:border-coffee-700; }
+.input { @apply w-full rounded-xl border border-coffee-200 bg-white px-3 py-2.5 dark:bg-coffee-900 dark:border-coffee-700 outline-none focus:ring-2 focus:ring-coffee-500; }
+.label { @apply text-sm font-medium text-coffee-800 dark:text-coffee-200; }
