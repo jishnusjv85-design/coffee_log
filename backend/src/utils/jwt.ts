@@ -2,10 +2,10 @@ import jwt from 'jsonwebtoken';
 import { env } from '../config/env.js';
 
 export function signAccess(payload: object) {
-  return jwt.sign(payload, env.jwtAccessSecret, { expiresIn: env.jwtAccessTtl });
+  return jwt.sign(payload, env.jwtAccessSecret, { expiresIn: env.jwtAccessTtl as any });
 }
 export function signRefresh(payload: object) {
-  return jwt.sign(payload, env.jwtRefreshSecret, { expiresIn: env.jwtRefreshTtl });
+  return jwt.sign(payload, env.jwtRefreshSecret, { expiresIn: env.jwtRefreshTtl as any });
 }
 export function verifyAccess<T=any>(token: string): T {
   return jwt.verify(token, env.jwtAccessSecret) as T;
