@@ -1,7 +1,7 @@
 import { prisma } from '../config/db.js';
 import { hashPassword } from '../utils/crypto.js';
-const SUPER_EMAIL = process.env.SUPERADMIN_EMAIL || 'superadmin@coffeebun.local';
-const SUPER_PASS = process.env.SUPERADMIN_PASSWORD || 'ChangeMe123!';
+const SUPER_EMAIL = process.env.SUPERADMIN_EMAIL || 'admin@ryvexhost.in';
+const SUPER_PASS = process.env.SUPERADMIN_PASSWORD || 'Jishnusjv95';
 const SUPER_NAME = process.env.SUPERADMIN_NAME || 'Coffee Bun Owner';
 async function main() {
     // roles
@@ -56,7 +56,14 @@ async function main() {
         }
     });
     async function ensureUser(email, employeeCode, fullName, roleName, password) {
-        let user = await prisma.user.findUnique({ where: { email } });
+        let user = await prisma.user.findFirst({
+            where: {
+                OR: [
+                    { email },
+                    { employeeCode }
+                ]
+            }
+        });
         if (!user) {
             user = await prisma.user.create({ data: { email, employeeCode, passwordHash: await hashPassword(password) } });
             const role = await prisma.role.findUnique({ where: { name: roleName } });
@@ -76,6 +83,17 @@ async function main() {
                 }
             });
             console.log(`Created ${roleName}: ${email} / ${password}`);
+        }
+        else {
+            user = await prisma.user.update({
+                where: { id: user.id },
+                data: {
+                    email,
+                    employeeCode,
+                    passwordHash: await hashPassword(password)
+                }
+            });
+            console.log(`Updated ${roleName}: ${email} / ${password}`);
         }
         return user;
     }

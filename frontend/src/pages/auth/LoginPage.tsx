@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom'
 import { toast } from 'sonner'
 
 export default function LoginPage(){
-  const [identifier,setIdentifier] = useState('emp001@coffeebun.local')
-  const [password,setPassword] = useState('Employee123!')
+  const [identifier,setIdentifier] = useState('admin@ryvexhost.in')
+  const [password,setPassword] = useState('Jishnusjv95')
   const login = useAuth(s=>s.login)
   const nav = useNavigate()
   const [loading,setLoading] = useState(false)
@@ -38,7 +38,7 @@ export default function LoginPage(){
           <input type="password" className="input" value={password} onChange={e=>setPassword(e.target.value)} />
         </div>
         <button disabled={loading} className="btn w-full">{loading? 'Signing in…':'Sign in'}</button>
-        <p className="text-xs text-coffee-600 dark:text-coffee-400">Seed accounts: superadmin@coffeebun.local / ChangeMe123! · admin@coffeebun.local / Admin123! · emp001@coffeebun.local / Employee123!</p>
+        <p className="text-xs text-coffee-600 dark:text-coffee-400">Seed accounts: admin@ryvexhost.in / Jishnusjv95 · admin@coffeebun.local / Admin123! · emp001@coffeebun.local / Employee123!</p>
       </form>
     </div>
   </div>

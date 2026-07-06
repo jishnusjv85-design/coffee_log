@@ -49,7 +49,7 @@ npm run dev
 Seed Super Admin: email from `SUPERADMIN_EMAIL` in .env, password from `SUPERADMIN_PASSWORD`
 
 Default seed:
-- superadmin@coffeebun.local / ChangeMe123!
+- admin@ryvexhost.in / Jishnusjv95
 - admin@coffeebun.local / Admin123!
 - emp001@coffeebun.local / Employee123!
 

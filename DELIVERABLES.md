@@ -29,7 +29,7 @@ Production-ready Attendance & Payroll monorepo.
 
 ## Seed Data
 - Branch: Coffee Bun HQ - Kochi (9.9312, 76.2673, 200m)
-- Super Admin: superadmin@coffeebun.local / ChangeMe123!
+- Super Admin: admin@ryvexhost.in / Jishnusjv95
 - Admin: admin@coffeebun.local / Admin123!
 - Employee: emp001@coffeebun.local / Employee123!
 
